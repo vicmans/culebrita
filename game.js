@@ -18,7 +18,7 @@ music.src='media/music.m4a';
 //wall.push(new Rectangle(100,100,10,10));
 //wall.push(new Rectangle(200,50,10,10));
 //wall.push(new Rectangle(200,100,10,10));
-
+var ch = document.getElementById("check");
 var KEY_ENTER=13;
 var KEY_LEFT=37;
 var KEY_UP=38;
@@ -62,8 +62,8 @@ function act(){
     if(!pause){
         // GameOver Reset
         if(gameover){
-            reset();music.stop();}
-		music.play()
+            reset();music.pause();}
+		if(ch.checked){music.play();}else{music.pause();}
         // Move Body
         for(var i=body.length-1;i>0;i--){
             body[i].x=body[i-1].x;
